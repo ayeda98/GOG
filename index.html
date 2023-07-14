@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Joyeux anniversaire !</title>
+    <style>
+        /* Ajoutez ici vos styles CSS pour l'animation */
+        /* Par exemple : */
+        body {
+            background-color: #f1f1f1;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        #cadre {
+            border: 5px solid #333;
+            border-radius: 10px;
+            width: 400px;
+            height: 400px;
+            margin: 50px auto;
+            position: relative;
+            overflow: hidden;
+            display: none; /* Cacher le cadre initial */
+        }
+
+        #cadre.visible {
+            display: block; /* Afficher le cadre après le chargement */
+        }
+
+        #cadre img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: rotate 30s linear infinite;
+        }
+
+        #cadre img:nth-child(2n) {
+            animation-direction: reverse; /* Inverser la direction de rotation pour les images paires */
+        }
+
+        #cadre h2 {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: slide 6s linear infinite;
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+            50% {
+                transform: translateX(-50%) rotate(180deg);
+            }
+            100% {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        @keyframes slide {
+            0% {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+            25% {
+                opacity: 1;
+                transform: translateX(-50%);
+            }
+            75% {
+                opacity: 1;
+                transform: translateX(-50%);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-50%);
+            }
+        }
+
+        #footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>HBD SALIFOU Zoulkifle</h1>
+    <div id="cadre">
+        <img src="tof1.jpg" alt="Photo 1">
+        <img src="tof2.jpg" alt="Photo 2">
+        <!-- Ajoutez d'autres photos si nécessaire -->
+        <h2>HBD, mon cher dev ! moins de kpanta de van.......</h2>
+    </div>
+
+    <div id="footer">
+        <p>&copy; DAF. Tous droits réservés. 14 Juil 2023. GOG Birthday!</p>
+    </div>
+
+    <script>
+        // Ajoutez ici votre code JavaScript si nécessaire
+        var cadre = document.getElementById('cadre');
+        cadre.classList.add('visible');
+    </script>
+</body>
+</html>
